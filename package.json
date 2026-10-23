@@ -1,0 +1,44 @@
+{
+  "name": "dsh-plugin-offwork",
+  "version": "0.1.0",
+  "description": "下班倒计时 + 今日已赚：侧边栏底部两张统计卡片，到点的 HH:MM:SS 倒计时与按日薪线性累计的当日收入。上班/下班时间、日薪、工作日在 cordis patch 的 config 里改。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "countdown",
+    "offwork",
+    "sidebar-card"
+  ],
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ]
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunaono1/dsh-plugin-offwork.git"
+  }
+}
