@@ -1,14 +1,16 @@
 # dsh-plugin-offwork 的 bundle patch：装插件时把宿主半侧插进组合，
-# 下面这份 config 就是两张卡片的全部设置（宿主读它，再经 /api/offwork/config 给卡片）。
-# 改完重装插件 + 重启 DSH Desktop 生效，不要直接改已装进 node_modules 的副本。
+# 下面这份 config 是两张卡片的兜底设置（宿主读它，再经 /api/offwork/config 给卡片）。
+# 想改设置优先改 ~/.dsh/offwork.json（同名字段覆盖这里，60 秒内生效、不用重启）；
+# 改这里则要重跑 apply.sh + 重启 DSH Desktop。
 - insert:
     - id: offwork
       name: 'dsh-plugin-offwork'
       config:
-        # 上班 / 下班时间（24 小时制，分钟数由宿主换算：09:00=540、17:40=1060）
+        # 上班 / 下班时间（24 小时制）
         workStart: "09:00"
-        workEnd: "17:40"
-        # 日薪（元）：当日收入 = 日薪 × 已上班时长 ÷ 工作日总时长，到下班点拿满
-        dailySalary: 600
-        # 工作日：1=周一 … 7=周日；不在名单里的日子两张卡显示休息
+        workEnd: "17:00"
+        # 月薪 ÷ 月工作日 = 日薪：9000 ÷ 22 = 409.09/天，到下班点拿满
+        monthlySalary: 9000
+        workdaysPerMonth: 22
+        # 工作日：1=周一 … 7=周日；周六周日休息
         workdays: [1, 2, 3, 4, 5]

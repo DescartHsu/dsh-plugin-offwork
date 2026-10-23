@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-offwork",
-  "version": "0.1.0",
-  "description": "下班倒计时 + 今日已赚：侧边栏底部两张统计卡片，到点的 HH:MM:SS 倒计时与按日薪线性累计的当日收入。上班/下班时间、日薪、工作日在 cordis patch 的 config 里改。",
+  "version": "0.2.0",
+  "description": "下班倒计时 + 今日已赚：侧边栏两张统计卡片，工作日倒计时到点，17:00 后自动变「已加班」红字计时；日薪按月薪÷月工作日换算，周六周日休。设置改 ~/.dsh/offwork.json，60 秒生效不用重启。",
   "keywords": [
     "deepseek-harness",
     "dsh",
