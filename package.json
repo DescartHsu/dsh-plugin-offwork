@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-offwork",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "侧边栏紧凑显示下班倒计时与今日已赚，支持在卡片上自定义上下班时间和日薪。",
   "keywords": [
     "deepseek-harness",
@@ -21,6 +21,7 @@
     "lib/index.js",
     "lib/client.js",
     "cordis.patch.yml",
+    "docs/preview",
     "README.md",
     "LICENSE"
   ],
@@ -39,6 +40,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sunaono1/dsh-plugin-offwork.git"
+    "url": "git+https://github.com/DescartHsu/dsh-plugin-offwork.git"
   }
 }

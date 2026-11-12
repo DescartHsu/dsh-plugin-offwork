@@ -2,6 +2,12 @@
 
 下班倒计时 + 今日已赚，两张挂在**侧边栏底部**的统计卡片，for [DeepSeek Harness](https://github.com/deepseek-ai/dsh)。
 
+## 预览
+
+<img src="docs/preview/sidebar.png" width="264" alt="侧边栏显示距下班 3 小时 30 分、今日已赚 220 元，右侧标出日薪 360 元">
+
+示例班次为 09:00–18:00，日薪 360 元。截图取自 14:30，此时已工作 5 小时 30 分。
+
 ## 它做什么
 
 | 卡片 | 显示 | 细节 |
@@ -13,11 +19,10 @@
 
 ## 安装
 
-发布后从 DSH 插件市场装；本机立即用：
+从[此 fork 的 GitHub Releases](https://github.com/DescartHsu/dsh-plugin-offwork/releases/latest) 下载插件安装包 `.tgz`。使用 DSH CLI 的用户可在下载目录运行：
 
 ```bash
-bash offwork-setup/apply.sh      # 装（幂等，首次会快照 package.json）
-bash offwork-setup/rollback.sh   # 卸，从快照整份恢复
+dsh plugin --profile desktop add ./dsh-plugin-offwork-0.3.0.tgz
 ```
 
 装完**完全退出并重启 DSH Desktop**，卡片出现在侧边栏底部。
@@ -25,6 +30,8 @@ bash offwork-setup/rollback.sh   # 卸，从快照整份恢复
 ## 配置
 
 点击倒计时卡右侧的 **设置**，填写上班时间、下班时间和日薪，点 **保存** 即时生效。工时按同一天计算，下班时间选 `00:00` 代表当天午夜。日薪可以填 `0`，也可以留空以沿用原配置（默认按月薪 ÷ 月工作日折算）。
+
+<img src="docs/preview/settings.png" width="290" alt="工时与日薪设置窗口，上班时间为 09:00，下班时间为 18:00，日薪为 360 元">
 
 设置保存在 **`~/.dsh/offwork.json`**。也可以手动编辑此文件，卡片会在 60 秒内刷新。示例：
 
