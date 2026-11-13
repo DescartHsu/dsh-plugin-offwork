@@ -19,10 +19,10 @@
 
 ## 安装
 
-从[此 fork 的 GitHub Releases](https://github.com/DescartHsu/dsh-plugin-offwork/releases/latest) 下载插件安装包 `.tgz`。使用 DSH CLI 的用户可在下载目录运行：
+在 DSH Desktop 的 **插件 → 添加插件** 中输入 `dsh-plugin-offwork`。使用 DSH CLI 的用户可以从 npm 安装：
 
 ```bash
-dsh plugin --profile desktop add ./dsh-plugin-offwork-0.3.0.tgz
+dsh plugin --profile desktop add dsh-plugin-offwork
 ```
 
 装完**完全退出并重启 DSH Desktop**，卡片出现在侧边栏底部。
